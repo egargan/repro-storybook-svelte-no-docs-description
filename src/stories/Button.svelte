@@ -33,10 +33,21 @@
   }
 </script>
 
-<button
-  type="button"
-  class={['storybook-button', `storybook-button--${size}`, mode].join(' ')}
-  {style}
-  on:click={onClick}>
-  {label}
-</button>
+<!--
+  Button component.
+
+  This docblock doesn't appear because of the `{#if size === 'medium'}` line.
+  Removing the button from the if block fixes the issue.
+
+  @component
+-->
+
+{#if size === 'medium'}
+  <button
+    type="button"
+    class={['storybook-button', `storybook-button--${size}`, mode].join(' ')}
+    {style}
+    on:click={onClick}>
+    {label}
+  </button>
+{/if}
